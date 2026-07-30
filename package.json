@@ -1,0 +1,13 @@
+{
+  "name": "infografico-ia",
+  "version": "1.0.0",
+  "description": "Gere infográficos profissionais e baixáveis (PNG) com IA — descreva um tema ou cole um texto e receba um infográfico pronto para postar.",
+  "private": true,
+  "scripts": {
+    "dev": "npx serve .",
+    "lint": "echo 'No linter configured — static HTML project'"
+  },
+  "keywords": ["maestria-da-ia", "community-tool", "byok"],
+  "author": "APP-BUILDER-01",
+  "license": "UNLICENSED"
+}
