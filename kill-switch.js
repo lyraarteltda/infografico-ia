@@ -49,12 +49,12 @@ const KillSwitch = (function() {
 
     overlay = document.createElement('div');
     overlay.id = 'killswitch-overlay';
-    overlay.style.cssText = 'position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;background:#0a0a0f;';
-    overlay.innerHTML = '<div style="text-align:center;max-width:480px;padding:32px;">' +
-      '<div style="font-size:48px;margin-bottom:24px;">🔧</div>' +
-      '<h1 style="font-size:28px;font-weight:800;margin-bottom:16px;background:linear-gradient(135deg,#fff,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Em Manutenção</h1>' +
-      '<p style="color:#9ca3af;font-size:16px;line-height:1.6;margin-bottom:24px;">Estamos realizando melhorias nesta ferramenta. Ela estará de volta em breve.</p>' +
-      '<div style="display:inline-block;background:rgba(167,139,250,.12);color:#a78bfa;padding:8px 20px;border-radius:100px;font-size:13px;font-weight:600;border:1px solid rgba(167,139,250,.2);">Maestros da IA</div>' +
+    overlay.style.cssText = 'position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;background:#f4f1e8;';
+    overlay.innerHTML = '<div style="text-align:center;max-width:480px;padding:36px;background:#fbf9f2;border:2.5px solid #17181c;border-radius:6px;box-shadow:8px 8px 0 #2036c9;">' +
+      '<div style="font-size:48px;margin-bottom:20px;">🔧</div>' +
+      '<h1 style="font-family:\'Helvetica Neue\',Helvetica,Arial,sans-serif;font-size:30px;font-weight:800;text-transform:uppercase;letter-spacing:-0.02em;margin-bottom:14px;color:#2036c9;position:relative;display:inline-block;">Em Manutenção<span style="position:absolute;left:2px;top:2px;z-index:-1;color:#ff5a6e;mix-blend-mode:multiply;">Em Manutenção</span></h1>' +
+      '<p style="color:#4c4b52;font-size:16px;line-height:1.6;margin-bottom:24px;">Estamos realizando melhorias nesta ferramenta. Ela estará de volta em breve.</p>' +
+      '<div style="display:inline-block;background:#d8324a;color:#f7f3e9;padding:7px 18px;border-radius:100px;font-family:ui-monospace,Menlo,monospace;font-size:12px;font-weight:700;letter-spacing:0.5px;">Maestros da IA</div>' +
       '</div>';
     document.body.appendChild(overlay);
   }

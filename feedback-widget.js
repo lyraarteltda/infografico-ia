@@ -16,7 +16,7 @@ const FeedbackWidget = (function() {
     btn.id = 'feedback-btn';
     btn.setAttribute('aria-label', 'Enviar feedback');
     btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> Feedback';
-    btn.style.cssText = 'position:fixed;bottom:24px;right:24px;z-index:9999;display:flex;align-items:center;gap:6px;padding:10px 18px;background:linear-gradient(135deg,#a78bfa,#f472b6);color:#fff;border:none;border-radius:100px;font-size:13px;font-weight:600;font-family:inherit;cursor:pointer;box-shadow:0 4px 20px rgba(167,139,250,.3);transition:transform .2s,box-shadow .2s;';
+    btn.style.cssText = 'position:fixed;bottom:24px;right:24px;z-index:9999;display:flex;align-items:center;gap:6px;padding:11px 18px;background:#2036c9;color:#f7f3e9;border:2px solid #17181c;border-radius:100px;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;font-family:inherit;cursor:pointer;box-shadow:4px 4px 0 #17181c;transition:transform .12s,box-shadow .12s;';
     btn.addEventListener('mouseenter', function() { btn.style.transform = 'scale(1.05)'; });
     btn.addEventListener('mouseleave', function() { btn.style.transform = 'scale(1)'; });
     btn.addEventListener('click', showModal);
@@ -34,18 +34,18 @@ const FeedbackWidget = (function() {
     modal.style.cssText = 'position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;';
 
     modal.innerHTML =
-      '<div id="feedback-overlay" style="position:absolute;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(4px);"></div>' +
-      '<div style="position:relative;background:#13161f;border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:28px;width:90%;max-width:440px;">' +
+      '<div id="feedback-overlay" style="position:absolute;inset:0;background:rgba(23,24,28,.55);"></div>' +
+      '<div style="position:relative;background:#fbf9f2;border:2.5px solid #17181c;border-radius:6px;box-shadow:8px 8px 0 #2036c9;padding:26px;width:90%;max-width:440px;">' +
         '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">' +
-          '<h3 style="font-size:18px;font-weight:700;color:#e8e8ec;">Enviar Feedback</h3>' +
-          '<button id="feedback-close" style="background:none;border:1px solid rgba(255,255,255,.08);border-radius:8px;color:#9ca3af;padding:6px 10px;cursor:pointer;font-size:16px;">&times;</button>' +
+          '<h3 style="font-size:19px;font-weight:800;text-transform:uppercase;letter-spacing:-0.01em;color:#17181c;font-family:\'Helvetica Neue\',Helvetica,Arial,sans-serif;">Enviar Feedback</h3>' +
+          '<button id="feedback-close" style="background:#ece6d6;border:2px solid #17181c;border-radius:3px;color:#17181c;padding:4px 11px;cursor:pointer;font-size:16px;">&times;</button>' +
         '</div>' +
         '<div style="display:flex;gap:8px;margin-bottom:16px;">' +
-          '<button class="fb-type-btn" data-type="bug" style="flex:1;padding:10px;background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.2);border-radius:10px;color:#ef4444;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;">🐛 Bug</button>' +
-          '<button class="fb-type-btn active" data-type="feature" style="flex:1;padding:10px;background:rgba(167,139,250,.12);border:1px solid rgba(167,139,250,.3);border-radius:10px;color:#a78bfa;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;">💡 Sugestão</button>' +
+          '<button class="fb-type-btn" data-type="bug" style="flex:1;padding:10px;background:rgba(192,57,43,.08);border:2px solid #ddd5c4;border-radius:3px;color:#c0392b;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;">🐛 Bug</button>' +
+          '<button class="fb-type-btn active" data-type="feature" style="flex:1;padding:10px;background:#2036c9;border:2px solid #17181c;border-radius:3px;color:#f7f3e9;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;">💡 Sugestão</button>' +
         '</div>' +
-        '<textarea id="feedback-text" placeholder="Descreva o bug ou sua sugestão..." style="width:100%;min-height:120px;padding:14px;background:#0a0a0f;border:1px solid rgba(255,255,255,.08);border-radius:12px;color:#e8e8ec;font-size:14px;font-family:inherit;resize:vertical;outline:none;"></textarea>' +
-        '<button id="feedback-send" style="width:100%;margin-top:12px;padding:14px;background:linear-gradient(135deg,#a78bfa,#f472b6);color:#fff;border:none;border-radius:12px;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit;">' +
+        '<textarea id="feedback-text" placeholder="Descreva o bug ou sua sugestão..." style="width:100%;min-height:120px;padding:13px;background:#f4f1e8;border:2px solid #17181c;border-radius:3px;color:#17181c;font-size:14px;font-family:inherit;resize:vertical;outline:none;"></textarea>' +
+        '<button id="feedback-send" style="width:100%;margin-top:12px;padding:14px;background:#2036c9;color:#f7f3e9;border:2px solid #17181c;border-radius:3px;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;cursor:pointer;font-family:inherit;box-shadow:4px 4px 0 #17181c;">' +
           '<span class="fb-btn-text">Enviar</span>' +
           '<span class="fb-btn-loading" style="display:none;">Enviando...</span>' +
         '</button>' +
@@ -59,11 +59,13 @@ const FeedbackWidget = (function() {
     modal.querySelectorAll('.fb-type-btn').forEach(function(b) {
       b.addEventListener('click', function() {
         modal.querySelectorAll('.fb-type-btn').forEach(function(x) {
-          x.style.background = x.dataset.type === 'bug' ? 'rgba(239,68,68,.05)' : 'rgba(167,139,250,.05)';
-          x.style.borderColor = 'rgba(255,255,255,.08)';
+          x.style.background = x.dataset.type === 'bug' ? 'rgba(192,57,43,.08)' : '#f4f1e8';
+          x.style.borderColor = '#ddd5c4';
+          x.style.color = x.dataset.type === 'bug' ? '#c0392b' : '#4c4b52';
         });
-        b.style.background = b.dataset.type === 'bug' ? 'rgba(239,68,68,.1)' : 'rgba(167,139,250,.12)';
-        b.style.borderColor = b.dataset.type === 'bug' ? 'rgba(239,68,68,.2)' : 'rgba(167,139,250,.3)';
+        b.style.background = b.dataset.type === 'bug' ? '#c0392b' : '#2036c9';
+        b.style.borderColor = '#17181c';
+        b.style.color = '#f7f3e9';
         selectedType = b.dataset.type;
       });
     });
@@ -78,7 +80,7 @@ const FeedbackWidget = (function() {
 
       if (!text) {
         statusEl.style.display = 'block';
-        statusEl.style.color = '#ef4444';
+        statusEl.style.color = '#c0392b';
         statusEl.textContent = 'Por favor, escreva sua mensagem.';
         return;
       }
@@ -104,16 +106,16 @@ const FeedbackWidget = (function() {
         try { result = await resp.json(); } catch {}
 
         if (result.success) {
-          statusEl.style.color = '#10b981';
+          statusEl.style.color = '#2f8f52';
           statusEl.textContent = result.message || 'Feedback enviado! Obrigado.';
           document.getElementById('feedback-text').value = '';
           setTimeout(closeModal, 2000);
         } else {
-          statusEl.style.color = '#ef4444';
+          statusEl.style.color = '#c0392b';
           statusEl.textContent = result.error || 'Erro ao enviar. Tente novamente.';
         }
       } catch {
-        statusEl.style.color = '#ef4444';
+        statusEl.style.color = '#c0392b';
         statusEl.textContent = 'Erro ao enviar. Tente novamente.';
       } finally {
         statusEl.style.display = 'block';
